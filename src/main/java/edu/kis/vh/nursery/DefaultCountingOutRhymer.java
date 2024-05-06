@@ -2,9 +2,11 @@ package edu.kis.vh.nursery;
 
 public class DefaultCountingOutRhymer {
 
+    public static final int emptyStackValue = -1;
+    public static final int stackCapacity = 11;
     private int[] numbers = new int[12];
 
-    public int totalCount = -1;
+    public int totalCount = emptyStackValue;
 
     public void countIn(int in) {
         if (!isFull())
@@ -12,22 +14,22 @@ public class DefaultCountingOutRhymer {
     }
 
     public boolean callCheck() {
-        return totalCount == -1;
+        return totalCount == emptyStackValue;
     }
 
     public boolean isFull() {
-        return totalCount == 11;
+        return totalCount == stackCapacity;
     }
 
     protected int peekLast() {
         if (callCheck())
-            return -1;
+            return emptyStackValue;
         return numbers[totalCount];
     }
 
     public int countOut() {
         if (callCheck())
-            return -1;
+            return emptyStackValue;
         return numbers[totalCount--];
     }
 
