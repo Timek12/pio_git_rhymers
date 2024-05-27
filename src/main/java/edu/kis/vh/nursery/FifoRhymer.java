@@ -17,6 +17,7 @@ public class FifoRhymer extends DefaultCountingOutRhymer {
      */
     @Override
     public int countOut() {
+        // TODO: This method could be refactored for better readability.
         while (!callCheck())
             temp.countIn(super.countOut());
 
